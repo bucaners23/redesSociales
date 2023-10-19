@@ -4,6 +4,8 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
@@ -128,6 +130,24 @@ public class crudUsuario {
 		frmCrudUsuario.getContentPane().add(txtNom);
 
 		btnAgregar = new JButton("Agegar");
+		btnAgregar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					DataUsuario x=new DataUsuario();
+					x.setCorreo(txtCorreo.getText());
+					x.setTelefono(txtTel.getText());
+					x.setCorreo(txtContra.getText());
+					x.setNombre(txtNom.getText());
+					if(x.insertarDataUsusario()) {
+						JOptionPane.showMessageDialog(null,"Se inserto correctamente");
+					}else {
+						JOptionPane.showMessageDialog(null, "ERROR 404 ;(");
+					}
+				}catch(Exception e2){
+					JOptionPane.showMessageDialog(null,"ERROR 404" );
+				}
+			}
+		});
 		btnAgregar.setBounds(525, 42, 108, 29);
 		frmCrudUsuario.getContentPane().add(btnAgregar);
 

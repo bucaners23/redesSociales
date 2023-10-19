@@ -6,39 +6,59 @@ public class DataUsuario {
 	String telefono;
 	String contraseña;
 	String Nombre;
+	DataUsuario du = new DataUsuario();
+
 	public DataUsuario() {
-		
+
+	}
+	public boolean insertarDataUsusario() {
+		if (du.insertarDataUsusario()) {
+			return true;
+		} else {
+			return false;
+
+		}
 	}
 	public int getIdUser() {
 		return idUser;
 	}
+
 	public void setIdUser(int idUser) {
 		this.idUser = idUser;
 	}
+
 	public String getCorreo() {
 		return correo;
 	}
+
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
+
 	public String getTelefono() {
 		return telefono;
 	}
+
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+
 	public String getContraseña() {
 		return contraseña;
 	}
+
 	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
 	}
+
 	public String getNombre() {
 		return Nombre;
 	}
+
 	public void setNombre(String nombre) {
 		Nombre = nombre;
 	}
+
 	
 
 }
